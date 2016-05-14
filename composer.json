@@ -1,0 +1,22 @@
+{
+  "name": "black-lamp/blcms-auth",
+  "description": "Auth extension for Black-Lamp CMS",
+  "keywords": ["yii2", "black-lamp", "cms", "auth", "login", "blcms"],
+  "type": "yii2-extension",
+  "authors": [
+      {
+        "name": "Gutsulyak Vadim",
+        "email": "guts.vadim@gmail.com"
+      }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": ">=2.0.4",
+    "yiisoft/yii2-bootstrap": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "bl\\cms\\auth\\": ""
+    }
+  }
+}
