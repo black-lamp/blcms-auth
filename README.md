@@ -3,30 +3,16 @@ Auth Extension for Black-Lamp CMS
 
 INSTALLATION
 ------------
-
-### Migrate
-
-    yii migrate --migrationPath=@vendor/yiisoft/yii2/rbac/migrations
-    yii migrate --migrationPath=@vendor/black-lamp/blcms-auth/migrations
-
-### Configure user component
-
-    'components' => [
-        ...
-        'user' => [
-            'loginUrl' => ['/auth/login'],
-            'identityClass' => 'bl\cms\auth\models\User',
-            'enableAutoLogin' => true,
-        ],
-        ...
-    ]
-
-### Add module to your 'modules' config section
-
-    'modules' => [
-        ...
-        'auth' => [
-            'class' => 'bl\cms\auth\Module'
-        ],
-        ...
-    ]
+In backend index.php file add to end of ArrayHelper::merge():
+ ```php 
+ $config = yii\helpers\ArrayHelper::merge(
+     require(__DIR__ . '/../../vendor/black-lamp/blcms-auth/backend/config/main.php')
+ );
+ ```
+ 
+ Also in frontend index.php file add to end of ArrayHelper::merge():
+```php
+$config = yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/../../vendor/black-lamp/blcms-auth/frontend/config/main.php')
+);
+```
