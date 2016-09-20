@@ -21,5 +21,12 @@ return [
                 'httpOnly' => true,
             ],
         ],
+        'session' => [
+            'name' => 'BACKENDSESSID',
+            'cookieParams' => [
+                'httpOnly' => true,
+                'path'     => '/admin',
+            ],
+        ],
     ],
 ];
